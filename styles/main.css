@@ -5,7 +5,6 @@ html {
 header {
     padding: 20px 30px;
     margin: 0;
-   
 }
 
 header h1 {
@@ -34,3 +33,42 @@ body {
     background-color: pink;
 }
 
+/* ----------------------------------------------------------------
+	Go To Top
+-----------------------------------------------------------------*/
+#gotoTop {
+    display: initial;
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    background-color: rgba(0, 0, 0, 0.3);
+    text-align: center;  
+    color: #FFF;
+    top: auto;
+    left: auto;
+    right: 30px;
+    bottom: 50px;
+    cursor: pointer;
+    border-radius: 2px;
+    padding: 5px;
+}
+
+body:not(.device-touch) #gotoTop {
+    transition: background-color .2s linear;
+    -webkit-transition: background-color .2s linear;
+    -o-transition: background-color .2s linear; 
+}
+
+#gotoTop a {
+    color: #FFF; 
+    text-decoration: none;
+}
+
+#gotoToptext {
+    padding-top: 9px;
+}
+
+#gotoTop:hover {
+    background-color: #1ABC9C; 
+}
