@@ -7,15 +7,15 @@ header {
     margin: 0;
 }
 
-header h1 {
+nav h1 {
     display: inline-block;
     vertical-align: middle;
-    padding-right: 40px;
+    padding-right: 90px;
 }
 
 nav ul {
     display: inline;
-    padding-left: 50px;
+    padding-left: 0;
 }
 
 nav li {
