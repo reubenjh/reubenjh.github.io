@@ -1,11 +1,104 @@
 body {
-    padding-top: 2rem;
+  padding-top: 2rem;
+}
+  
+.highlight {
+  font-style: italic;
+  padding: 2rem;
+  background-color: #ccc;
+  border-radius: 0.5rem;
+  box-shadow: 0.5rem 0.5rem 0 0 #aaa;
+}
+
+
+
+/*
+====================
+Mobile view
+====================
+*/
+
+@media (max-width: 550px) {
+  .row, .column, .columns {
+    margin: 5px 0;
   }
   
-  .highlight {
-    font-style: italic;
-    padding: 2rem;
-    background-color: #ccc;
-    border-radius: 0.5rem;
-    box-shadow: 0.5rem 0.5rem 0 0 #aaa;
+  #logo {
+    margin-bottom: 0 !important;
   }
+}
+
+
+
+
+/*
+====================
+Nav bar
+====================
+*/
+
+#logo {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+#all-blogs {
+  text-align: center;
+  vertical-align: bottom;
+  
+}
+
+
+
+/*
+====================
+Full-width images. Note: these are outside of the body .container
+====================
+*/
+
+.header-image {
+  width: 100%;
+}
+
+
+
+/*
+====================
+Body content spacing / styling
+====================
+*/
+
+
+h1 {
+  margin-bottom: 2.5rem;
+}
+
+h2 {
+  margin-bottom: 2.5rem;
+}
+
+.intro {
+  margin-top: 6rem;
+}
+
+.intro h1 {
+  text-align: center;
+}
+
+#programming-gif {
+  width: 100%;
+}
+
+.thumbnail {
+  width: 100%;
+}
+
+.thumbnail-heading {
+  padding-bottom: 5px;
+
+}
+
+.thumbnail-excerpt {
+  font-size: 14px;
+
+}
