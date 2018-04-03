@@ -78,7 +78,6 @@ Full-width images
 
 
 
-
 /*
 ====================
 Main content spacing / styling
@@ -119,6 +118,17 @@ h6 {
 
 }
 
+
+
+/*
+====================
+Inset class for blog content
+====================
+*/
+
+.inset-by-two.columns {
+  margin-right: 17.3333333333%; 
+}
 
 
 /*
