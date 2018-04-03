@@ -98,12 +98,20 @@ h4 {
   font-size: 2.2rem;
   padding-top: 2rem;
   margin-bottom: 1.5rem;
-  
+}
+
+h5 {
+  font-size: 
 }
 
 h6 {
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+a {
+  color: #FF8C00;
+  transition: all ease-in-out 250ms;
 }
 
 .intro {
@@ -122,16 +130,23 @@ h6 {
 .thumbnail-heading {
   padding-bottom: 3px;
   margin-bottom: 0;
+}
 
+a.thumbnail-heading {
+  opacity: 0.8;
+  text-decoration: none;
 }
 
 .thumbnail-excerpt {
   font-size: 14px;
   color:	#696969;
+  padding-bottom: 1rem;
 
 }
 
-
+.side-nav {
+  padding-top: 10rem;
+}
 
 /*
 ====================
