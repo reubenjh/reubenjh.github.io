@@ -1,13 +1,11 @@
+/*
+====================
+Global
+====================
+*/
+
 body {
   padding-top: 2rem;
-}
-  
-.highlight {
-  font-style: italic;
-  padding: 2rem;
-  background-color: #ccc;
-  border-radius: 0.5rem;
-  box-shadow: 0.5rem 0.5rem 0 0 #aaa;
 }
 
 
@@ -30,24 +28,44 @@ Mobile view
 
 
 
-
 /*
 ====================
 Nav bar
 ====================
 */
 
+nav a {
+    color: black;
+    opacity: 0.5;
+    transition: all ease-in-out 250ms;
+    text-decoration: none;
+}
+
 #logo {
   text-align: center;
   margin-bottom: 15px;
 }
 
-#all-blogs {
-  text-align: center;
-  vertical-align: bottom;
-  
+#logo a {
+  color: black;
+  opacity: 0.8;
+  transition: all ease-in-out 250ms;
+  text-decoration: none;
 }
 
+#logo a:hover {
+  color: #0FA0CE;
+  opacity: 0.5;
+  transition: all ease-in-out 250ms;
+  text-decoration: none;
+}
+
+#all-blogs p {
+  text-align: center;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  
+}
 
 
 /*
@@ -68,7 +86,6 @@ Body content spacing / styling
 ====================
 */
 
-
 h1 {
   margin-bottom: 2.5rem;
 }
@@ -79,14 +96,7 @@ h2 {
 
 .intro {
   margin-top: 6rem;
-}
-
-.intro h1 {
   text-align: center;
-}
-
-#programming-gif {
-  width: 100%;
 }
 
 .thumbnail {
