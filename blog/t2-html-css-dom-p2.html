@@ -1,59 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>
-            HTML, CSS and DOM p2
-        </title>
-        <link  rel="stylesheet" type="text/css" href="../styles/main.css" />
-        <meta charset="UTF-8">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <title>HTML, CSS, DOM p2</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+    <link rel="stylesheet" type="text/css" href="../styles/custom.css">
+</head>
 
-    <body>
-        <header>
-            <nav>
-                <h1>Reuben H</h1>
-                <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="c1-reflection-blog.html">Reflection</a></li>
-                    <li><a href="t1-time-and-habits-blog.html">Time and Habits</a></li>
-                    <li><a href="t2-html-css-dom-p1.html">HTML, CSS, DOM p1</a></li>
-                    <li>HTML, CSS, DOM p2</li>
-                    <li><a href="c2-emotional-intelligence.html">Emotional Intelligence</a></li>
-                </ul>
+<body>
+
+    <!-- 
+    ################
+    Top nav
+    ##############
+    -->
+    <div id="nav" role="navigation">
+        <div class="container">
+            <nav class="row">
+                <div class="eight columns offset-by-two">
+                    <h3 role="logo" id="logo"><a href="../index.html">REUBEN H.</a></h3>
+                </div>
+
+                <div class="two columns" id="all-blogs">
+                    <p><a href="../index.html#blogs">ALL BLOGS</a></p>
+                </div>
             </nav>
-        </header>
-
-        <div class="content">
-            <section class="blog">
-                <h1> HTML, CSS and DOM (part 2)</h1>
-                <p>* <strong>What is grid based design?</strong>
-                    <br>
-                    A design philosophy where you create a grid structure dividing the page up into columns and rows to house all of your elements. This makes it easy to lay out our elements in a visually appealling way.
-                    <br><br>
-                    * <strong>What's all the hype about responsive webpages?</strong>
-                    <br>
-                    Web traffic isn't only from computers, a huge portion actually browse on mobile phones or tablets, and each of those devices have very different screen sizes. You don't want your webpage to only work for some of those screen sizes and looked smooshed or unreadable on some, so web designers need to make webpages 'responsive', meaning they will respond to the size of the screen viewing it and adjust css accordingly to create a suitable design. People have pretty short attention spans so you'll lose them quick if your website looks like crap on a phone and the header image is all weirdly zoomed in and the text is a ridiculous size and they can't see the links because they're hidden somewhere in virtual space where they'd have to horizontally scroll to find them.
-                    <br><br>
-                    <img id="non-responsive-img" src="../images/responsive-web-design-false.png" alt="shitty website">
-                    <br><br>
-                    * <strong>What is semantic structure?</strong>
-                    <br>
-                    The structure of what each section <em>means</em>. It's tags like <code>header</code>, <code>nav</code>, <code>section</code> and <code>footer</code>, making the code easier for someone else to understand, and easier to target certain areas with css that occur across multiple pages like a navigation bar.
-                    <br><br>
-                    * <strong>Any other points you found interesting and want to reflect on?</strong>
-                    <br>
-                    Nope, all hunky-dory.
-                    <br><br>
-                    Reuben.
-                    <br><br>
-                </p>
-            </section>
         </div>
+    </div>
 
-        <!-- Go To Top feature
-        ============================================= -->
-        <div id="gotoTop">
-            <div id="gotoToptext"><a href="#">Top</a></div>
+    <!-- 
+    ################
+    Header image
+    ##############
+    -->
+
+    <div class="header-container">
+        <img class="header-image" src="../images/headers/lego-batman-header.jpg" alt="batman also needs robin">
+    </div>
+
+    <!-- 
+    ################
+    Main content
+    ##############
+    -->
+
+    <div class="container">
+        <div class="row blog-intro">
+            <div class="two columns">
+                <div class="side-nav">
+                    <h5 class="side-nav-intro">Related</h5>
+                    <hr class="nav-divider">
+
+                    <a href="c1-reflection-blog.html"><p>Reflection</p></a>
+                    <hr class="nav-divider">
+
+                    <a href="t1-time-and-habits-blog.html"><p>Time and Habits</p></a>
+                    <hr class="nav-divider">
+
+                    <a href="t2-html-css-dom-p1.html"><p>HTML, CSS and DOM (1)</p></a>
+                    <hr class="nav-divider">
+
+                    <a href="c2-emotional-intelligence.html"><p>E.Q.</p></a>
+                    <hr class="nav-divider">
+                </div>
+            </div>
+
+            <div class="eight columns inset-by-two">
+                <h2>HTML, CSS and DOM (part 2)</h2>
+                <h4>What is grid based design?</h4>
+                <p>A design philosophy where you create a grid structure dividing the page up into columns and rows to house all of your elements. This makes it easy to lay out our elements in a visually appealling way.</p>
+                <h4>What's all the hype about responsive webpages?</h4>
+                <p>Web traffic isn't only from computers, a huge portion actually browse on mobile phones or tablets, and each of those devices have very different screen sizes. You don't want your webpage to only work for some of those screen sizes and looked smooshed or unreadable on some, so web designers need to make webpages 'responsive', meaning they will respond to the size of the screen viewing it and adjust css accordingly to create a suitable design. People have pretty short attention spans so you'll lose them quick if your website looks like crap on a phone and the header image is all weirdly zoomed in and the text is a ridiculous size and they can't see the links because they're hidden somewhere in virtual space where they'd have to horizontally scroll to find them.</p>
+                <img id="non-responsive-img" src="../images/responsive-web-design-false.png" alt="shitty website">
+                <br>
+                <h4>What is semantic structure?</h4>
+                <p>The structure of what each section <em>means</em>. It's tags like <code>div</code>, <code>header</code>, <code>nav</code>, <code>section</code> and <code>footer</code>, making the code easier for someone else to understand, and easier to target certain areas with css that occur across multiple pages like a navigation bar.</p>
+                <h4>Any other points you found interesting and want to reflect on?</h4>
+                <p>Nope, all hunky-dory.</p>
+            </div>
         </div>
-    </body>
+        <hr>
+
+        <br>
+        <p>Reuben Harcourt.</p>
+        
+    </div>
+</body>
 </html>
