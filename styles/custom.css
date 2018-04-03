@@ -5,49 +5,6 @@ Global
 */
 
 
-/*
-====================
-Mobile view - grid
-====================
-*/
-
-@media (max-width: 550px) {
-  .row, .column, .columns {
-    margin: 5px 0;
-  }
-}
-
-  
-
-/*
-====================
-Mobile view - nav
-====================
-*/
-
-@media (max-width: 550px) {
-  #logo {
-    margin-bottom: 0 !important;
-  }
-}
-
-
-
-/*
-====================
-Mobile view - whitespace
-====================
-*/
-
-@media (max-width: 550px) {
-  .row, .column, .columns {
-    margin: 5px 0;
-  }
-  
-  #logo {
-    margin-bottom: 0 !important;
-  }
-}
 
 
 /*
@@ -58,17 +15,27 @@ Nav bar
 
 #nav {
   background-color: #fef7f5;
+  padding-top: 2rem;
+  text-align: center;
+}
+
+#nav h3 {
+  padding: 1rem 0;
+}
+
+#nav p {
+  padding: 2rem 0;
+  margin-bottom: 15px;
 }
 
 nav a {
-    color: black;
-    opacity: 0.5;
-    transition: all ease-in-out 250ms;
-    text-decoration: none;
+  color: black;
+  opacity: 0.5;
+  transition: all ease-in-out 250ms;
+  text-decoration: none;
 }
 
 #logo {
-  text-align: center;
   margin-bottom: 15px;
 }
 
@@ -87,9 +54,6 @@ nav a {
 }
 
 #all-blogs p {
-  text-align: center;
-  padding-bottom: 0;
-  margin-bottom: 0;
   
 }
 
@@ -108,13 +72,9 @@ Full-width images. Note: these are outside of the body .container
 
 /*
 ====================
-Body content spacing / styling
+Main content spacing / styling
 ====================
 */
-
-#nav {
-  padding-top: 2rem;
-}
 
 h1 {
   margin-bottom: 2.5rem;
@@ -149,3 +109,46 @@ h6 {
   color:	#696969;
 
 }
+
+
+
+/*
+====================
+Mobile view - grid
+====================
+*/
+
+  
+
+/*
+====================
+Mobile view - nav
+====================
+*/
+
+@media (max-width: 550px) {
+  #all-blogs p {
+    padding: 0.5rem 0; 
+  }
+}
+
+@media (max-width: 550px) {
+  #logo {
+    margin-bottom: 0 !important;
+  }
+
+  .intro {
+    margin-top: 35px !important;
+  }
+}
+
+
+
+/*
+====================
+Mobile view - whitespace
+====================
+*/
+
+  
+
