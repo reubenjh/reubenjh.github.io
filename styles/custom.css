@@ -94,11 +94,18 @@ h2 {
 }
 
 .thumbnail-heading {
-  padding-bottom: 5px;
+  padding-bottom: 3px;
+  margin-bottom: 0;
 
+}
+
+h6 {
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .thumbnail-excerpt {
   font-size: 14px;
+  color:	#696969;
 
 }
