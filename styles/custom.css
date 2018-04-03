@@ -101,7 +101,7 @@ h4 {
 }
 
 h5 {
-  font-size: 
+  font-size: 1.6rem;
 }
 
 h6 {
@@ -145,7 +145,29 @@ a.thumbnail-heading {
 }
 
 .side-nav {
-  padding-top: 10rem;
+  padding-top: 10.1rem;
+}
+
+.side-nav-intro {
+  padding-bottom: 1rem;
+}
+
+.side-nav p {
+  font-size: 13px;
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+.side-nav a {
+  text-decoration: none;
+}
+
+.side-nav a:hover {
+  opacity: 0.5;
+}
+
+.nav-divider {
+  margin: 2.5rem 0;
 }
 
 /*
@@ -189,6 +211,24 @@ Mobile view - nav
   }
 }
 
+
+
+/*
+====================
+Mobile view - blog side-nav
+====================
+*/
+
+@media (max-width: 550px) {
+  .side-nav {
+    display: none;
+  }
+
+  .blog-body {
+    width: 85%;
+    margin-right: 0;
+  }
+}
 
 
 /*
