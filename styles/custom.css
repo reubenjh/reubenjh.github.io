@@ -60,13 +60,22 @@ nav a {
 
 /*
 ====================
-Full-width images. Note: these are outside of the body .container
+Full-width images
 ====================
 */
 
 .header-image {
   width: 100%;
 }
+
+.header-container {
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box; }
+
 
 
 
@@ -149,6 +158,3 @@ Mobile view - nav
 Mobile view - whitespace
 ====================
 */
-
-  
-
