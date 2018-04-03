@@ -4,15 +4,38 @@ Global
 ====================
 */
 
-body {
-  padding-top: 2rem;
+
+/*
+====================
+Mobile view - grid
+====================
+*/
+
+@media (max-width: 550px) {
+  .row, .column, .columns {
+    margin: 5px 0;
+  }
+}
+
+  
+
+/*
+====================
+Mobile view - nav
+====================
+*/
+
+@media (max-width: 550px) {
+  #logo {
+    margin-bottom: 0 !important;
+  }
 }
 
 
 
 /*
 ====================
-Mobile view
+Mobile view - whitespace
 ====================
 */
 
@@ -27,12 +50,15 @@ Mobile view
 }
 
 
-
 /*
 ====================
 Nav bar
 ====================
 */
+
+#nav {
+  background-color: #fef7f5;
+}
 
 nav a {
     color: black;
@@ -85,6 +111,10 @@ Full-width images. Note: these are outside of the body .container
 Body content spacing / styling
 ====================
 */
+
+#nav {
+  padding-top: 2rem;
+}
 
 h1 {
   margin-bottom: 2.5rem;
