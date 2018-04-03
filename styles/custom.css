@@ -76,7 +76,9 @@ Full-width images
   padding: 0;
   box-sizing: border-box; }
 
-
+#box-model-img {
+  width: 100%;
+}
 
 /*
 ====================
