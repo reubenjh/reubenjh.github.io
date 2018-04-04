@@ -76,7 +76,7 @@ Full-width images
   padding: 0;
   box-sizing: border-box; }
 
-#box-model-img, #non-responsive-img {
+.wireframe, #box-model-img, #non-responsive-img, #stickman-painting {
   width: 100%;
 }
 
