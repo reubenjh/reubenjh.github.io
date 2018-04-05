@@ -107,13 +107,31 @@ h5 {
 }
 
 h6 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 400;
+  font-style: italic;
 }
 
 a {
   color: #FF8C00;
   transition: all ease-in-out 250ms;
+  text-decoration: none;
+}
+
+.thumbnails a {
+  color: black;
+  transition: all ease-in-out 250ms;
+}
+
+.thumbnails a:hover {
+  color: #FF8C00;
+  transition: all ease-in-out 250ms;
+}
+
+.thumbnail-heading {
+  padding-bottom: 5px;
+  margin-bottom: 0;
+  padding-top: 3px;
 }
 
 .intro {
@@ -127,16 +145,6 @@ a {
 
 .thumbnail {
   width: 100%;
-}
-
-.thumbnail-heading {
-  padding-bottom: 3px;
-  margin-bottom: 0;
-}
-
-a.thumbnail-heading {
-  opacity: 0.8;
-  text-decoration: none;
 }
 
 .thumbnail-excerpt {
