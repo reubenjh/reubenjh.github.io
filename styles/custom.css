@@ -118,6 +118,12 @@ a {
   text-decoration: none;
 }
 
+img.thumbnail:hover {
+  opacity: 0.5;
+  transition: all ease-in-out 250ms;
+
+}
+
 .thumbnails a {
   color: black;
   transition: all ease-in-out 250ms;
