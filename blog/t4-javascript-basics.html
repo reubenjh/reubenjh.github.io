@@ -81,13 +81,39 @@
             <div class="eight columns inset-by-two">
                 <h2>JavaScript Basics</h2>
                 <h4>How does JavaScript compare to HTML and CSS?</h4>
-                <p>Holy crap. It's so much more difficult. Maybe it's just because I had done a bit of HTML and CSS before so I'm having a bit of shock seeing a new language, but this week has been real hard. It's mathsy and logicy, which I like but find really hard to wrap my brain around.</p>
-                <p>I stopped at one point when it was making almost no sense and read through the Sprint 4 overview resources. One of those was a guide to pseudocoding, which is the process of writing out what you want your code to do on paper in more plain english terms to help you get your mind around what you're trying to do, or share it with someone else, before doing all the fiddly bits of syntax specific to JavaScript. I found that really useful over the course of the next 15 or so hours I was lost in the freecodecamp course.</p>
+                <p>Holy crap. It's so much more difficult. Maybe it's just because I had done a bit of HTML and CSS before so I'm having a bit of shock seeing a completely foreign language, but this week has been real hard. It's mathsy and logicy, which I like but find really hard to wrap my brain around.</p>
+                <p>I stopped at one point when it was making almost no sense and read through the Sprint 4 overview resources. One of those was a guide to pseudocoding, which is the process of writing out what you want your code to do on paper in plain english terms to help you get your mind around what you're trying to do, or share it with someone else, before doing all the fiddly bits of exact syntax specific to JavaScript. I found that really useful over the course of the next 15 or so hours I was lost in the freecodecamp universe.</p>
+                <p>I'm a really visual learner, in that I do much better being able to see the elements of a problem and their relationship to one another, so my first impression is that JavaScript is going to be challenging for me since there are so many abstract concepts working at once and it's hard to see the connections between them all. I'm going to need to focus a lot on the pseudocoding side of things to try give myself a helping hand here.</p>
                 <h4>Explain control flow and loops using an example process from everyday life, for example 'waking up' or 'brushing your teeth'.</h4>
-                <p>xxx</p>
+                <p>There are a bunch of functions and tools in JavaScript that use 'true' or 'false' to make decisions in code. These look like 'if', 'for' or 'while'. You provide them with conditions - e.g. 'if (x = )', they check to see if the conditions evaluate to 'true', and if so, they execute the code you've written in their following curly brackets. If the condition is 'false', the code in the curlies is ignored. Control flow is the concept of using them, and nesting these inside one another to make complex decisions, to direct the code that is to be executed depending on the variables present.</p>
+                <p>A better way to explain that would be to draw my own control flow code for getting up in the morning using if statements:</p>
+                <hr>
+                <p><strong>Variables:</strong>
+                    <br><br>Reuben
+                    <br>time
+                    <br>toothpaste
+                    <br>weather
+                    <br>coffeejar
+                    <br><br>
+                    <code>If (<mark>Reuben</mark> = awake and <mark>time</mark> = morning) {
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;Then get up and go to the bathroom,
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;Then if (<mark>toothpaste</mark> does not = empty) {
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Brush teeth,
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} Otherwise plan to buy toothpaste and brush teeth later,
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Then if (<mark>weather</mark> = cold) {
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Put on warm clothes,
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} Otherwise put on normal clothes,
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Then if (<mark>coffeejar</mark> does not = empty) {
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Make a coffee,
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} Otherwise panic that there is no coffee,
+                        <br>} Otherwise stay in bed.
+                    </code>
+                </p>
+                <hr>
+                <p>Loops in JavaScript are ways to go through a list of data and apply code to each item without having to actually write it out heaps of times.</p>
                 <h4>Explain the difference between accessing data from arrays and objects.</h4>
-                <p>To access data in an array, you need to target it's 'index', or 'numerical position in the array'. These are represented by a number appended at the end of a variable in square brackets. Just to make life a bit more nonsensical, the count starts at <em>0</em>, as opposed to <em>1</em>, since computers start counting from 0. So the left-most item in an array is index 0, the next index 1 and so on and so on.</p>
-                <p>Objects, on the other hand, store their data in a more human way by organising it into 'properties'. To access an object's data you need only to refer to the property that you're concerned with .......</p>
+                <p>To access data in an array, you need to target it's 'index', or 'numerical position in the array'. These are represented by a number appended at the end of a variable in square brackets. Just to make life a bit more nonsensical, the count starts at <em>0</em>, as opposed to <em>1</em>, since computers start counting from 0. So the left-most item in an array is index 0, the next index 1 and so on and so on. If an array, called myArray, consists of the numbers 1, 5, and 9, then myArray[0] = 1 and mArray[2] = 9.</p>
+                <p>Objects, on the other hand, store their data in a more human way by organising it into 'properties'. To access an object's data you need only to refer to the property that you're concerned with. If an object, called myObject, has the properties "legs": 4, and "eyes": 2, then myObject["legs"] = 4, and myObject["eyes"] = 2.</p>
                 <h4>Explain what functions are and why they are useful.</h4>
                 <p>Functions are a repeatable bit of code that you can run on some arguments. They're useful as you only need to write out the function you want your JavaScript to perform once, then do it by calling the name of the function at any time. The arguments that it performs the code in question on can change. You could write a function to convert Celcius temperature to Fahrenheit, then call the function with the Celcius in brackets and it will spit out the converted Fahrenheit for you.</p>
             </div>
