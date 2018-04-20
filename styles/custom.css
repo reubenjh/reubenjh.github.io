@@ -112,6 +112,10 @@ h6 {
   font-style: italic;
 }
 
+.listanswer {
+  opacity: 0.75;
+}
+
 a {
   color: #FF8C00;
   transition: all ease-in-out 250ms;
