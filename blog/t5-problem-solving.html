@@ -75,6 +75,11 @@
 
                     <a href="t4-javascript-basics.html"><p>JavaScript Basics</p></a>
                     <hr class="nav-divider">
+
+                    <a href="c4-daily-mindfullness.html"><p>Daily Mindfullness</p></a>
+                    <hr class="nav-divider">
+
+                    
                 </div>
             </div>
 
@@ -82,55 +87,56 @@
                 <h2>Problem Solving</h2>
                 <h4>Tell your non-tech friend a story about a time you:</h4>
                 <em><strong>Got blocked on a simple problem.</strong></em><br>
-                <p>answer</p>
+                <p>When trying to turn my design for this site into actual code, I got stuck on what seemed like the simplest problem. We're using a system to for the layout of our sites called a grid framework, where the horizontal space is equally divided into 12 parts. I wanted to make my article content sit more tucked into the middle with more padding on the left and the right sides so there is some whitespace and it doesn't seem like such an intimidaing amount of reading.</p>
+                <p>I figured it would be easy enough to just divide the horizontal space and leave say 2 parts empty on the left and 2 parts empty on the right, with the article content filling up the central 8 parts. In the left-hand space I put the 'related' side-bar, but I didn't have anything I wanted to put in the right-hand space so I left it empty. When I loaded it up, sure enough there was the left hand space with the 'related' bar, but the content area was taking up the whole remaining space, flowing over into the right-hand 2 spaces I had tried to leave empty. It turns out empty spaces in the framework don't display. It looked ridiculous. The centred lines like headlines weren't centred on the page, they were centred in the 10 spaces it was taking up so slightly skewed to the right.</p>
+                <p>Not to worry I thought, I'll see what tools the framework has to deal with this. I found a piece of code you can apply to an area to 'offset' it, pushing it right however many of the 12 available horizontal parts that you'd like. But I didn't need to push it right, I needed to push its right boundary <em>left</em> to make the empty space on the right hand side of the page that I wanted. I was stumped with this for about an hour, trying to put empty spaces in the right hand 2 parts of the page so there was technically something there for it to display, or to put some content in there but use code to tell it not to display. All while really not wanting to muddy up the code and make it all really confusing just to create some empty space for a design feature.</p>
                 <em><strong>Solved a problem in an elegant way.</strong></em><br>
-                <p>Asnwer</p>
-                
+                <p>With the above problem, I decided to try to recreate the tool that the people who had built the grid framework were using to offset areas to the right, but to make a version called 'inset' that did the same in the opposite direction that I actually needed. I trawled through their code until I could figure it out and when I wrote it out and applied it to the main content area for my articles it did exactly what I needed. I can't understand why this isn't a part of the package they supply anyway!</p>
                 <h4>How confident do you feel about using the following techniques?</h4>
                 <ul>
                     <li>Pseudocode
                         <ul>
-                            <li class="listanswer">answer</li>
+                            <li class="listanswer">Mildly confident, the difficult thing at the start of learning JavaScript (I think) is to wrap your head around the logic flow that you need to go through in the first place. Of course the exact syntax is difficult too, and pseudocoding can hugely help with that, but I don't find it a silver bullet at the moment since I'm often not sure the order in which I need to do things either. Though pseudocoding does help with that too funnily enough, because you can take shots at writing out the steps in a flow to see how they need to be structured, and get there after a couple iterations of pseudocoding.</li>
                         </ul>
                     </li>
                     <li>Trying something
                         <ul>
-                            <li class="listanswer">answer</li>
+                            <li class="listanswer">Very confident.</li>
                         </ul>
                     </li>
                     <li>Rubber ducky method
                         <ul>
-                            <li class="listanswer">answer</li>
+                            <li class="listanswer">Haven't tried this yet but look forward to it.</li>
                         </ul>
                     </li>
                     <li>Reading error messages
                         <ul>
-                            <li class="listanswer">answer</li>
+                            <li class="listanswer">Confident. This was really useful in Sprint 5 during the the event handling, altering the DOM, and event-driven DOM modification assignments. I set breakpoints at the bits where I was unsure what my code was doing and stepped through them a piece at a time to see when and where the error happened, and why.</li>
                         </ul>
                     </li>
                     <li>Console.logging
                         <ul>
-                            <li class="listanswer">answer</li>
+                            <li class="listanswer">Haven't tried this yet.</li>
                         </ul>
                     </li>
                     <li>Googling
                         <ul>
-                            <li class="listanswer">answer</li>
+                            <li class="listanswer">Very confident. Google has been my saviour all through this course so far. I love how helpful the programming community are in forums and the like.</li>
                         </ul>
                     </li>
                     <li>Asking your peers for help
                         <ul>
-                            <li class="listanswer">answer</li>
+                            <li class="listanswer">I haven't done this yet but definitely will when it comes up.</li>
                         </ul>
                     </li>
                     <li>Asking coaches for help
                         <ul>
-                            <li class="listanswer">answer</li>
+                            <li class="listanswer">Very confident to do this if needed.</li>
                         </ul>
                     </li>
                     <li>Improving your process with reflection
                         <ul>
-                            <li class="listanswer">answer</li>
+                            <li class="listanswer">Confident.</li>
                         </ul>
                     </li>
                 </ul>
