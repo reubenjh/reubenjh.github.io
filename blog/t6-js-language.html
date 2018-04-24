@@ -36,7 +36,7 @@
     -->
 
     <div class="header-container">
-        <img class="header-image" src="../images/headers/sea-shanty-header.jpg" alt="batman also needs robin">
+        <img class="header-image" src="../images/headers/desert-header.jpg" alt="batman also needs robin">
     </div>
 
     <!-- 
@@ -94,40 +94,71 @@
                 <h2>JavaScript Language</h2>
                 <h4>Explaining all the use cases of:</h4>
                 <em><strong>Parentheses: ()</strong></em>
-                <br>
+                <br><br>
                 <ul>
                     <li>
-                        Parentheses are used to surround the information that is passed to a function e.g. <code>function myFunction (spoon, fork)</code>. When you call myFunction, you pass it the info representing the fork and the spoon e.g. myFunction ('airNZ branded fork', 'silver spoon') to perform its task on them. This is true for predefined functions too such as <code>push()</code> or <code>addEventListener()</code>.
+                        Parentheses are used to surround a function's arguments - the information that is passed to the function to work with.
+                        <br><br>e.g. <code>function myFunction (spoon, fork)</code>
+                        <br><br>When you call myFunction, you pass it the info representing the fork and the spoon e.g. myFunction ('airNZ branded fork', 'silver spoon') to perform its task on them. This is true for predefined functions too such as <code>push()</code> or <code>addEventListener()</code>.
                     </li>
+                    <br>
                     <li>
                         They're also used to define conditions or parameters in <code>if</code>, <code>for</code> or <code>while</code> loops. e.g. <code>if (x === 10) {piece of code}</code> will only execute the code if the condition that x strictly equals 10 in the parenthesis is true.
                     </li>
+                    <br>
                     <li>
-                        They can also be used to control the order in which calculations are done in more complicated maths problems. If a piece of arithmetic is in parenthesis, it will be calculated first. If there are parenthesis within those parenthesis, then those will be calculated first out of everything in the initial parenthesis. e.g. in <code>let myAnswer = x * ((x + 2) / 2)</code>, JavaScript will see the x + 2 statement is in parenthesis nested in parenthesis and calculate that, before dividing by two and finally multiplying the product by 10 to give myAnswer.
+                        They can also be used to control the order in which calculations are done in more complicated maths problems. If a piece of arithmetic is in parenthesis, it will be calculated first. If there are parenthesis within those parenthesis, then those will be calculated first out of everything in the initial parenthesis.
+                        <br><br>e.g. in <code>let myAnswer = x * ((x + 2) / 2)</code>, JavaScript will see the x + 2 statement is in parenthesis nested in parenthesis and calculate that, before dividing by two and finally multiplying the product by 10 to give myAnswer.
                     </li>
                 </ul>
                 <em><strong>Brackets: []</strong></em>
-                <br>
+                <br><br>
                 <ul>
-                        <li>
-                            Brackets are used to access items in an array using the index, or to access properties of an object by using the property name e.g. myArray[2] selects the third item in myArray (since js counts starting from 0), and myObject['legs'] targets the property called 'legs' in the object.
-                        </li>
-                        <li>
-                            They're also used to define conditions or parameters in <code>if</code>, <code>for</code> or <code>while</code> loops. e.g. <code>if (x === 10) {piece of code}</code> will only execute the code if the condition that x strictly equals 10 in the parenthesis is true.
-                        </li>
-                        <li>
-                            They can also be used to control the order in which calculations are done in more complicated maths problems. If a piece of arithmetic is in parenthesis, it will be calculated first. If there are parenthesis within those parenthesis, then those will be calculated first out of everything in the initial parenthesis. e.g. in <code>let myAnswer = x * ((x + 2) / 2)</code>, JavaScript will see the x + 2 statement is in parenthesis nested in parenthesis and calculate that, before dividing by two and finally multiplying the product by 10 to give myAnswer.
-                        </li>
-                    </ul>
+                    <li>
+                        Brackets are used to put data into an array e.g. <code>let myArray = ['dogs', 'cats', 'fish']</code>.
+                    </li>
+                    <br>
+                    <li>
+                        Brackets are also used to access data items in an array using the index, or numerical position in the array. e.g. <code>myArray[1]</code> is 'cats' as JavaScript counts the index number starting from 0 and 'cats' is the second data item from the left. 
+                    </li>
+                    <br>
+                    <li>
+                        Another use for brackets similar to the above is to access properties of an object by using the property name in brackets e.g. myObject['legs'] targets the property called 'legs' in the object myObject.
+                    </li>
+                </ul>
                 <em><strong>Braces: {}</strong></em>
-                <br>
-                <p>asnwer</p>
+                <br><br>
+                <ul>
+                    <li>
+                        Braces are used to put data into an object e.g. <code>let myObject = {name: 'Rufus', species: 'dog', legs: 4, bestfriend: 'man'}</code>.
+                    </li>
+                    <br>
+                    <li>
+                        Braces can also be used to wrap code that will only be executed under certain circumstances. e.g. <code>if (something) {code to execute}</code> will only execute the code in the braces if the conditions in the parenthesis evaluate to true.
+                    </li>
+                    <br>
+                    <li>
+                        They're also used to define what a function does. Once the function has been defined e.g. <code>function myFunction (one, two) {let three = one * two; return three}</code>, it can be called at any time with its name myFunction and its arguments in parenthesis to execute the code that has been defined for it in the braces.
+                    </li>
+                </ul>
                 <em><strong>Single quotes: ''</strong></em>
-                <br>
-                <p>asnwer</p>
+                <br><br>
+                <ul>
+                    <li>
+                        Single quotes are used most commonly, and interchangably with double quotes "", to wrap data that is a string. In the object myObject above that is defining a dog named Rufus, Rufus needs to be in quotes as it's a word, not a number or a true/false value or anything like that.
+                    </li>
+                    <br>
+                    <li>
+                        In the same way as above, they're used to define words for functions to look for e.g. <code>document.getElementById('title')</code> will look for an element in the document with id='title'.
+                    </li>
+                    <br>
+                    <li>
+                        They're also used to wrap JavaScript events such as 'click', 'dblclick' or 'mouseenter'. e.g. <code>document.getElementById('title').addEventListener('click', myFunction())</code> will make the element with the title id perform myFunction() when it is clicked.
+                    </li>
+                </ul>
                 <em><strong>Double quotes: ""</strong></em>
-                <br>
-                <p>asnwer</p>
+                <br><br>
+                <p>Exactly the same as above I believe, except it can be handly to have two ways to do this. If a string has quotes in it e.g. <code>let myString = 'Geoff likes to think he is 'the Fonz''</code>, the ' before 'the fonz' will actually close the string and it will just read 'Geoff likes to think he is ' then 'the fonz' will cause an error. Instead, we can write <code>let myString = 'Geoff likes to think he is "the Fonz"'</code> for JavaScript to realise the quotes are a part of the string. It can be done around the other way too, with double quotes wrapping the strong and single quotes in the sentence. As long as they are different.</p>
 
             </div>
         </div>
