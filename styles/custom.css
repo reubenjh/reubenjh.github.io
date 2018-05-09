@@ -128,6 +128,11 @@ img.thumbnail:hover {
 
 }
 
+.thumbnails {
+  margin-top: 1.4rem;
+}
+
+
 .thumbnails a {
   color: black;
   transition: all ease-in-out 250ms;
@@ -144,9 +149,12 @@ img.thumbnail:hover {
   padding-top: 3px;
 }
 
+.intro h2 {
+  text-align: center;
+}
+
 .intro {
   margin-top: 6rem;
-  text-align: center;
 }
 
 .blog-intro {
