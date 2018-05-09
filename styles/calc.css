@@ -1,0 +1,73 @@
+
+.button {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+#display {
+    font-size: 30px;
+    height: 70px;
+    margin: 10px 0;
+}
+
+#history {
+    font-size: 11px;
+    height: 40px;
+}
+
+hr {
+    border-top: 1px solid #E1E1E1;
+    margin: 7px 0;
+    padding: 0px;
+}
+
+.first {
+    margin-top: 15px;
+}
+
+input {
+    height: 64px;
+}
+
+
+#calculator {
+    padding: 12%;
+}
+
+/* Button colors */
+
+#plus {
+    background-color: rgb(36, 211, 36);
+    color: white;
+    border-color: white;
+}
+
+#minus {
+    background-color: red;
+    color: white;
+    border-color: white;
+}
+
+#divide {
+    background-color: rgb(2, 136, 245);
+    color: white;
+    border-color: white;
+}
+
+#multiply {
+    background-color: orange;
+    color: white;
+    border-color: white;
+}
+
+#equals {
+    background-color: black;
+    color: white;
+    border-color: white;
+}
+
+#clear1, #clear2 {
+    background-color: #D3D3D3;
+    color: white;
+    border-color: white;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+    <link rel="stylesheet" type="text/css" href="../styles/calc.css">
+    <script src="../lib/calc.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="eight columns offset-by-two" id="calculator">
+                <div class="row display">
+                    <input type="text" disabled="disabled" class="twelve columns" id="history">
+                </div>
+            
+                <div class="row display">
+                    <input type="text" disabled="disabled" class="twelve columns" id="display"/ value="0">
+                </div>
+                
+                <hr>
+                <div class="first row">
+                    <a class="button four columns number">1</a>
+                    <a class="button four columns number">2</a>
+                    <a class="button four columns number">3</a>
+                </div>
+                
+                <div class="second row">
+                    <a class="button four columns number">4</a>
+                    <a class="button four columns number">5</a>
+                    <a class="button four columns number">6</a>
+                    
+                </div>
+
+                <div class="third row">
+                    <a class="button four columns number">7</a>
+                    <a class="button four columns number">8</a>
+                    <a class="button four columns number">9</a>
+                    
+                </div>
+
+                <div class="fourth row">
+                    <a class="button four columns number">0</a>
+                    <a class="button four columns number">.</a>
+                    <a class="button four columns clear" id="clear1">CE</a>
+                </div>
+
+                <div class="fifth row">
+                    <a class="button four columns function" id="plus">+</a>
+                    <a class="button four columns function" id="minus">-</a>
+                    <a class="button four columns clear" id="clear2">AC</a>
+                </div>
+
+                <div class="sixth row">
+                    <a class="button four columns function" id="divide">/</a>
+                    <a class="button four columns function" id="multiply">x</a>
+                    <a class="button four columns equals" id="equals">=</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
