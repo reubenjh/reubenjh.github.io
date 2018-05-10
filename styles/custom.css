@@ -13,10 +13,6 @@ Nav bar
 ====================
 */
 
-iframe {
-  display: none;
-}
-
 #nav {
   background-color: #fef7f5;
   padding-top: 2rem;
@@ -70,7 +66,7 @@ Full-width images
 .header-container {
   position: relative;
   width: 100%;
-  max-width: 1400px;
+  max-width: 1700px;
   margin: 0 auto;
   padding: 0;
   box-sizing: border-box; }
@@ -79,11 +75,17 @@ Full-width images
   width: 100%;
 }
 
+
+
 /*
 ====================
 Main content spacing / styling
 ====================
 */
+
+.spacer {
+  height: 50px;
+}
 
 .invisible {
   display: none;
@@ -154,7 +156,7 @@ img.thumbnail:hover {
   padding-top: 3px;
 }
 
-.intro h2 {
+.intro h2, h3 {
   text-align: center;
 }
 
