@@ -13,6 +13,10 @@ Nav bar
 ====================
 */
 
+iframe {
+  display: none;
+}
+
 #nav {
   background-color: #fef7f5;
   padding-top: 2rem;

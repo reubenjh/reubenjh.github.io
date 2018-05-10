@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
     <link rel="stylesheet" type="text/css" href="styles/custom.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="lib/main.js"></script>
 </head>
 
@@ -72,129 +73,9 @@
             <div class="six columns" id="recent-two"></div>
         </div>
         <a class="button" href="blog/all-blogs.html">Read them all..., need to style button</a>
+        <iframe src="all-blogs.html" id="iframe"></iframe>
 
-
-        <!-- 
-        ################
-        Currently need these on the page for recent blogs js, 
-        ##############
-        -->
-        <div class="invisible">
-            <div class="thumbnails">
-                <div class="row">
-                    <div class="twelve columns" id="blogs">
-                        <h2>All blogs.</h2>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="six columns preview">
-                        <a href="blog/c1-reflection-blog.html"><img src="images/thumbnails/batman-cropped.png" alt="batman wants robin" class="thumbnail"></a>
-                        <a href="blog/c1-reflection-blog.html" class="thumbnail-heading"><h6 class="thumbnail-heading">Reflection</h6></a>
-                        <p class="thumbnail-excerpt">It's easy to sit in a lecture at uni, get a list of assignments and a set grade to hit, but it's boring, and I've forgotten literally everything I learned in Spanish 112 other than "como estas?"</p>
-                    </div>
-
-                    <div class="six columns preview">
-                        <a href="blog/t1-time-and-habits-blog.html"><img src="images/thumbnails/smeagol-cropped.jpg" alt="smeagol with a fish" class="thumbnail"></a>
-                        <a href="blog/t1-time-and-habits-blog.html" class="thumbnail-heading"><h6 class="thumbnail-heading">Time and Habits</h6></a>
-                        <p class="thumbnail-excerpt">What can I get done in two tomatoes, or 50 minutes? And how much time should I sink into trying to vertically align a fiddly little element? Must be a good idea to set some boundaries.</p>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="six columns preview">
-                        <a href="blog/t2-html-css-dom-p1.html"><img src="images/thumbnails/monster-cropped.jpg" alt="dragging a monster" class="thumbnail"></a> 
-                        <a href="blog/t2-html-css-dom-p1.html" class="thumbnail-heading"><h6 class="thumbnail-heading">HTML, CSS, DOM (part 1)</h6></a>
-                        <p class="thumbnail-excerpt">Learning the relationship between these acronyms, and how a solid black website background makes it look like your myspace profile from the early 2000's.</p>
-                    </div>
-
-                    <div class="six columns preview">
-                        <a href="blog/t2-html-css-dom-p2.html"><img src="images/thumbnails/snow-troopers-cropped.jpg" alt="batman in the rain" class="thumbnail"></a>
-                        <a href="blog/t2-html-css-dom-p2.html" class="thumbnail-heading"><h6 class="thumbnail-heading">HTML, CSS, DOM (part 2)</h6></a>
-                        <p class="thumbnail-excerpt">What's a grid system? What's all the fuss about responsive design? And what even is a div?</p>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="six columns preview">
-                        <a href="blog/c2-emotional-intelligence.html"><img src="images/thumbnails/blueberry-ninja-cropped.jpg" alt="blueberry ninja" class="thumbnail"></a>
-                        <a href="blog/c2-emotional-intelligence.html" class="thumbnail-heading"><h6 class="thumbnail-heading">Emotional Intelligence</h6></a>
-                        <p class="thumbnail-excerpt">Screw I.Q.</p>
-                    </div>
-
-                    <div class="six columns preview">
-                        <a href="blog/t3-design-to-web-blog.html"><img src="images/thumbnails/lego-photographer-cropped.jpg" alt="blueberry ninja" class="thumbnail"></a>
-                        <a href="blog/t3-design-to-web-blog.html" class="thumbnail-heading"><h6 class="thumbnail-heading">Design to web</h6></a>
-                        <p class="thumbnail-excerpt">Responsiveness, mobile first, frameworks and wireframes. Plus a big yarn about the things that were frustratingly difficult in redesigning this new site</p>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="six columns preview">
-                        <a href="blog/c3-meditation-process.html"><img src="images/thumbnails/star-wars-cropped.jpg" alt="blueberry ninja" class="thumbnail"></a>
-                        <a href="blog/c3-meditation-process.html" class="thumbnail-heading"><h6 class="thumbnail-heading">Meditation Process</h6></a>
-                        <p class="thumbnail-excerpt">If the mind is like a bucket of water with lots of little bits of dirt and gravel, I'm definitely shaking mine alot - agitating it and jumping from this thought to the next, and it feels murky. So I'm looking forward to trying out letting it sit still.</p>
-                    </div>
-
-                    <div class="six columns preview">
-                        <a href="blog/t4-javascript-basics.html"><img src="images/thumbnails/keyboard-cropped.jpg" alt="blueberry ninja" class="thumbnail"></a>
-                        <a href="blog/t4-javascript-basics.html" class="thumbnail-heading"><h6 class="thumbnail-heading">JavaScript Basics</h6></a>
-                        <p class="thumbnail-excerpt">Bit of a curveball - JavaScript is bloody hard.</p>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="six columns preview">
-                        <a href="blog/c4-daily-mindfullness.html"><img src="images/thumbnails/starbucks-cropped.jpg" alt="blueberry ninja" class="thumbnail"></a>
-                        <a href="blog/c4-daily-mindfullness.html" class="thumbnail-heading"><h6 class="thumbnail-heading">Daily Mindfullness</h6></a>
-                        <p class="thumbnail-excerpt">Mindful conversations, learning to walk like a zen baby, and learning to anctually enjoy the "Search Inside Yourself" chapters I used to dread.</p>
-                    </div>
-
-                    <div class="six columns preview">
-                        <a href="blog/t5-problem-solving.html"><img src="images/thumbnails/luke-cropped.jpg" alt="blueberry ninja" class="thumbnail"></a>
-                        <a href="blog/t5-problem-solving.html" class="thumbnail-heading"><h6 class="thumbnail-heading">Probem Solving</h6></a>
-                        <p class="thumbnail-excerpt">Struggling to solve simple problems, talking to a rubber ducky, writing logic in plain English terms and sticking at a problem until it's done.</p>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="six columns preview">
-                        <a href="blog/c5-self-confidence.html"><img src="images/thumbnails/sea-shanty-cropped.jpg" alt="blueberry ninja" class="thumbnail"></a>
-                        <a href="blog/c5-self-confidence.html" class="thumbnail-heading"><h6 class="thumbnail-heading">Self Confidence</h6></a>
-                        <p class="thumbnail-excerpt">The relationship between self confidence and mindfullness, doing the body scan and being the sky.</p>
-                    </div>
-
-                    <div class="six columns preview">
-                        <a href="blog/t6-js-language.html"><img src="images/thumbnails/desert-cropped.jpg" alt="blueberry ninja" class="thumbnail"></a>
-                        <a href="blog/t6-js-language.html" class="thumbnail-heading"><h6 class="thumbnail-heading">JavaScript Language</h6></a>
-                        <p class="thumbnail-excerpt">What all the little bits and pieces of syntax mean. (), [], {}, '', and "".</p>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="six columns preview">
-                        <a href="blog/c6-control.html"><img src="images/thumbnails/rey-cropped.jpg" alt="blueberry ninja" class="thumbnail"></a>
-                        <a href="blog/c6-control.html" class="thumbnail-heading"><h6 class="thumbnail-heading">Control</h6></a>
-                        <p class="thumbnail-excerpt">Siberian North Railroad and triggers.</p>
-                    </div>
-
-                    <div class="six columns preview">
-                        <a href="blog/c7-motivation.html"><img src="images/thumbnails/moon-cropped.jpg" alt="blueberry ninja" class="thumbnail"></a>
-                        <a href="blog/c7-motivation.html" class="thumbnail-heading"><h6 class="thumbnail-heading">Motivation</h6></a>
-                        <p class="thumbnail-excerpt">Pleasure, passion and purpose, core values and mental resilience</p>
-                    </div>
-
-                    <!-- 
-                    ################
-                    Next blog in here
-                    ##############
-                    -->
-                
-                </div>
-            </div>
-            
-        </div>
-        <hr>
+        
         <p>Oooooor maybe <a href="projects/minesweeper.html">play my minesweeper game?</a></p>
 
         <br>
