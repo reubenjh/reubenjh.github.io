@@ -234,7 +234,7 @@ Mobile view - nav
 */
 
 @media (max-width: 549px) {
-  #all-blogs p {
+  .nav-button p {
     padding: 0.5rem 0; 
   }
 }
