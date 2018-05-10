@@ -2,6 +2,10 @@ html, body {
     height: 100%;
     font-family: 'Open Sans', sans-serif
   }
+
+  .first {
+    padding-top: 4%;
+  }
   
   body {
     display: flex;
