@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scope</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+    <link rel="stylesheet" type="text/css" href="../styles/custom.css">
+</head>
+
+<body>
+
+    <!-- 
+    ################
+    Top nav
+    ##############
+    -->
+    <div id="nav" role="navigation">
+        <div class="container">
+            <nav class="row">
+                <div class="two columns nav-button">
+                    <p><a href="../index.html#projects">PROJECTS</a></p>
+                </div>
+
+                <div class="eight columns">
+                    <h3 role="logo" id="logo"><a href="../index.html">REUBEN H.</a></h3>
+                </div>
+
+                <div class="two columns nav-button">
+                    <p><a href="../index.html#blogs">ALL BLOGS</a></p>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <!-- 
+    ################
+    Header image
+    ##############
+    -->
+
+    <div class="header-container">
+        <img class="header-image" src="../images/headers/moon-header.jpg" alt="batman also needs robin">
+    </div>
+
+    <!-- 
+    ################
+    Main content
+    ##############
+    -->
+
+    <div class="container">
+        <div class="row blog-intro">
+            <div class="two columns">
+                <div class="side-nav">
+                    <h5 class="side-nav-intro">Related</h5>
+                    <hr class="nav-divider">
+
+                    <a href="c1-reflection-blog.html"><p>Reflection</p></a>
+                    <hr class="nav-divider">
+
+                    <a href="t1-time-and-habits-blog.html"><p>Time and Habits</p></a>
+                    <hr class="nav-divider">
+
+                    <a href="t2-html-css-dom-p1.html"><p>HTML, CSS and DOM (1)</p></a>
+                    <hr class="nav-divider">
+
+                    <a href="t2 -html-css-dom-p2.html"><p>HTML, CSS and DOM (2)</p></a>
+                    <hr class="nav-divider">
+
+                    <a href="c2-emotional-intelligence.html"><p>E.Q.</p></a>
+                    <hr class="nav-divider">
+
+                    <a href="t3-design-to-web-blog.html"><p>Design to Web</p></a>
+                    <hr class="nav-divider">
+
+                    <a href="c3-meditation-process.html"><p>Meditation Process</p></a>
+                    <hr class="nav-divider">
+
+                    <a href="t4-javascript-basics.html"><p>JavaScript Basics</p></a>
+                    <hr class="nav-divider">
+
+                    <a href="c4-daily-mindfullness.html"><p>Daily Mindfullness</p></a>
+                    <hr class="nav-divider">
+
+                    <a href="t5-problem-solving.html"><p>Problem Solving</p></a>
+                    <hr class="nav-divider">
+
+                    <a href="c5-self-confidence.html"><p>Self Confidence</p></a>
+                    <hr class="nav-divider">
+
+                    <a href="t6-js-language.html"><p>JavaScript Language</p></a>
+                    <hr class="nav-divider">
+
+                    <a href="c6-control.html"><p>Control</p></a>
+                    <hr class="nav-divider">
+
+                    <a href="c7-motivation.html"><p>Motivation</p></a>
+                    <hr class="nav-divider">
+                </div>
+            </div>
+
+            <div class="eight columns inset-by-two">
+                <h2>Scoperoonie</h2>
+                <h4>What is 'scope', and how does it work in JavaScript?</h4>
+                <p>Scope is basically how visible something is. In JavaScript, there are two levels of scope as far as I know. Local scope and global scope.</p>
+                <p>As the name suggests, global scope basically means it's visible everywhere. So you can interact with it directly anywhere in your code even when you're deep in layers of other stuff. Local scope on the other hand means it's only visible within it's native block of code. The most common case where variables only have local scope is within something called 'functions'. These are little bite sized pieces of code you can write to be executed with just a keyword. New variables you define within your function have local scope so if you try to interact with them outside of your little function block, JavaScript won't be able to see them.</p>
+                <p>This all sounds like it won't be that important but it definitely is. When trying to make the history bar in my <a href="../projects/calc.html" target="_blank">calculator</a> work correctly, I kept running into trouble within the function that would loop through my array of entries the user has input to write each item to a string variable called history, then write history to the innerHTML of my history bar on the page. The problem was if I had it set to write each entry to the variable history, then entry 2 would overwrite entry 1, and entry 3 overwrite entry 2 etc and I would end up with just the last entry that it set, rather than the actual set of entries that have been input. If I had it append each entry onto history as it looped, I would end up with the right thing the first time I tried to write history, but next time I wanted a fresh history it woud append it again as it would look and see history is no longer empty and append the new entries onto the end of the previous ones. The issue was that history had global scope, as it was defined outside of the function so that other things could interact with it, but what I really needed was a fresh variable each time the function was called. So I made a variable <em>within</em> the function called tempHistory, initialized it to be empty and appended each entry to it before writing tempHistory to history, and finally writing history to the innerHTML of my history bar to display it. Since it would operate on a fresh tempHistory variable each time, it worked. I can't remember why I didn't just reset history to be empty as a part of the code before looping through and appending, which sounds like it would have been easier now that I write this, but there was definitely a reason at the time!</p>
+            </div>
+        </div>
+        <hr>
+
+        <br>
+        <p>Reuben Harcourt.</p>
+        
+    </div>
+</body>
+</html>
