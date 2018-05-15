@@ -208,6 +208,11 @@ img.thumbnail:hover {
   width: 85%;
 }
 
+canvas {
+  margin: 40px auto;
+  display: block;
+}
+
 /*
 ====================
 Inset class for blog content

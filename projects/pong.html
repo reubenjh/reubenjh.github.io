@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+    <link rel="stylesheet" type="text/css" href="../styles/custom.css">
+    <title>Pong</title>
+    <script>
+        var canvas;
+        var canvasContext;
+        var ballX = 0;
+        var ballY = 300;
+        var ballSpeedX = 10;
+        var ballSpeedY = 4;
+
+        var player1Score = 0;
+        var player2Score = 0;
+        const WINNING_SCORE = 3;
+
+        var showingWinScreen = false;
+
+        var paddle1Y = 250;
+        var paddle2Y = 250;
+        const PADDLE_HEIGHT = 100;
+        const PADDLE_THICKNESS = 10;
+        
+        window.onload = function() {
+            /* Create canvas
+             */
+            canvas = document.getElementById("gameCanvas");
+            canvasContext = canvas.getContext("2d");
+            /* Draw empty canvas
+             */
+            drawRect(0, 0, canvas.width, canvas.height, "black");
+            
+            /* Setting initial speed
+             */
+            var framesPerSecond = 30
+            setInterval(function() {
+                moveEverything();
+                drawEverything();
+            }, 1000/framesPerSecond);
+
+            /* Setting mouse coordinates to control left padding position
+             */
+            canvas.addEventListener("mousemove", function(evt) {
+                var mousePos = calculateMousePos(evt);
+                paddle1Y = mousePos.y-(PADDLE_HEIGHT/2)
+            });
+            /* Allow click to continue on winning screen
+             */
+            canvas.addEventListener("click", function() {
+                if (showingWinScreen) {
+                    player1Score = 0;
+                    player2Score = 0;
+                    showingWinScreen = false;
+                }
+            });
+            /* Pause game and show intro
+             */
+            showingWinScreen = true;
+
+        }
+        
+        function calculateMousePos(evt) {
+            /* Find mouse coordinates on user page, with 0,0 at their top left
+             */
+            var rect = canvas.getBoundingClientRect();
+            var root = document.documentElement;
+            var mouseX = evt.clientX - rect.left - root.scrollLeft;
+            var mouseY = evt.clientY - rect.top - root.scrollTop;
+            return {
+                x:mouseX,
+                y:mouseY
+            };
+        }
+
+        function computerMovement() {
+            var paddle2YCenter = paddle2Y + (PADDLE_HEIGHT/2);
+            if (paddle2YCenter < ballY-(PADDLE_HEIGHT/3)) {
+                paddle2Y += 6;
+            } 
+            else if (paddle2YCenter > ballY+(PADDLE_HEIGHT/3)) {
+                paddle2Y -= 6;
+            }
+        }
+
+        function moveEverything() {
+            /* Pausing movement if someone has won
+             */
+            if (showingWinScreen) {
+                return;
+            }
+            /* AI for right paddle
+             */
+            computerMovement();
+
+            /* Move ball
+             */
+            ballX += ballSpeedX;
+            ballY += ballSpeedY;
+            /* Make ball either bounce horizontally or reset if missed
+             */
+            if (ballX > canvas.width) {
+                if (ballY > paddle2Y && ballY < (paddle2Y + PADDLE_HEIGHT)) {
+                    ballSpeedX = -ballSpeedX;
+
+                    var deltaY = ballY-(paddle2Y+PADDLE_HEIGHT/2);
+                    ballSpeedY = deltaY * 0.35;
+                } else { 
+                    player1Score++; // Must be before ball reset
+                    ballReset();
+
+                }
+            } 
+            if (ballX < 0) {
+                if (ballY > paddle1Y && ballY < (paddle1Y + PADDLE_HEIGHT)) {
+                    ballSpeedX = -ballSpeedX;
+                    
+                    var deltaY = ballY-(paddle1Y+PADDLE_HEIGHT/2);
+                    ballSpeedY = deltaY * 0.35;
+                } else { 
+                    player2Score++; // Must be before ball reset
+                    ballReset();
+                }
+            }
+            /* Make ball bounce vertically
+             */
+            if (ballY < 0) {
+                ballSpeedY = -ballSpeedY;
+            }
+            if (ballY > canvas.height) {
+                ballSpeedY = -ballSpeedY;
+            }
+        }
+
+
+
+        function drawNet() {
+            for (var i = 0; i < canvas.height; i+=40) {
+                drawRect((canvas.width/2)-1, i, 2, 20, "white");
+            }
+        }
+
+
+
+        function drawEverything() {
+            /* Blank the screen with black
+             */
+            drawRect(0, 0, canvas.width, canvas.height, "black");
+            /* Pausing movement if someone has won
+             */
+             if (showingWinScreen) {
+                canvasContext.fillStyle = "white";
+                canvasContext.fillText("Score = "+player1Score, 100, 70);
+                canvasContext.fillText("Score = "+player2Score, 650, 70);
+                if (player1Score >= WINNING_SCORE) {
+                    canvasContext.fillText("Player 1 winzzzzzz", (canvas.width/2) - 35, canvas.height/2);
+                    canvasContext.fillText("Click to continue", (canvas.width/2) - 30, canvas.height*(5/6));
+                } else if (player2Score >= WINNING_SCORE) {
+                    canvasContext.fillText("Player 2 winzzzzzz", (canvas.width/2) - 35, canvas.height/2);
+                    canvasContext.fillText("Click to continue", (canvas.width/2) - 30, canvas.height*(5/6));
+                } else { 
+                    canvasContext.fillText("Click to pong up a storm", (canvas.width/2) - 50, canvas.height/2);
+                }
+                return;
+            }
+
+            /* Draw the net
+             */
+            drawNet();
+            /* Draw the ball
+             */
+            drawCircle(ballX, ballY, 10, "white");
+            /* Draw the left paddle
+             */
+            drawRect(0, paddle1Y, PADDLE_THICKNESS, PADDLE_HEIGHT, "white");
+            /* Draw the right paddles
+             */
+            drawRect(canvas.width-PADDLE_THICKNESS, paddle2Y, PADDLE_THICKNESS, PADDLE_HEIGHT, "white");
+            /* Draw the scoring
+             */
+            canvasContext.fillText("Score = "+player1Score, 100, 70);
+            canvasContext.fillText("Score = "+player2Score, 650, 70);
+        }
+
+        function drawCircle(centerX, centerY, radius, color) {
+            canvasContext.fillStyle = color;
+            canvasContext.beginPath();
+            canvasContext.arc(centerX, centerY, radius, 0, Math.PI*2, true);
+            canvasContext.fill();
+        }
+
+        function drawRect(leftX, topY, width, height, color) {
+            canvasContext.fillStyle = color;
+            canvasContext.fillRect(leftX, topY, width, height);
+        }
+
+        function ballReset() {
+            if (player1Score >= WINNING_SCORE || player2Score >= WINNING_SCORE) {
+                showingWinScreen = true;
+            }
+            ballSpeedX = -ballSpeedX;
+            ballX = canvas.width/2;
+            ballY = canvas.height/2;
+        }
+
+    </script>
+</head>
+<body>
+
+    <!-- 
+    ################
+    Top nav
+    ##############
+    -->
+    <div id="nav" role="navigation">
+        <div class="container">
+            <nav class="row">
+                <div class="two columns nav-button">
+                    <p><a href="../index.html#projects">PROJECTS</a></p>
+                </div>
+
+                <div class="eight columns">
+                    <h3 role="logo" id="logo"><a href="../index.html">REUBEN H.</a></h3>
+                </div>
+
+                <div class="two columns nav-button">
+                    <p><a href="../index.html#blogs">ALL BLOGS</a></p>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="twelve collumns">
+                <canvas id="gameCanvas" width="800" height="600"></canvas>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
