@@ -1,0 +1,357 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crappy snake</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+    <link rel="stylesheet" type="text/css" href="../styles/custom.css">
+    <script>
+
+        var canvas;
+        var canvasContext;
+
+        /* snakeX and snakeY are just center starting positions.
+         * Have to hardcode canvas.width/2 as 300 as canvas.width isn't 
+         * set until window.onload
+         */
+        const SNAKE_THICKNESS = 12;
+        var snakeX = 300 - (SNAKE_THICKNESS/2);
+        var snakeY = 300 - (SNAKE_THICKNESS/2);
+        var snakeHeadCenterPoint = {
+            x: snakeX+(SNAKE_THICKNESS/2),
+            y: snakeY+(SNAKE_THICKNESS/2)
+            }
+        var snakeBody = [];
+        var snakeSpeed = 5;
+        var snakeDirection = '';
+        
+        var apple = {};
+        const APPLE_THICKNESS = 10;
+  
+        
+
+
+        window.onload = function() {
+            /* Access canvas to draw on
+             */
+            canvas = document.getElementById('myCanvas');
+            canvasContext = canvas.getContext('2d');
+
+            clearCanvas();
+            drawSnakeHead();
+            generateApple();
+            /* Add directional arrow controls
+             */
+            document.addEventListener('keydown', function(event) {
+                // Prevent default page scrolling
+                event.preventDefault();
+                // Right key
+                if (event.which == 39) {
+                    // Snake can't reverse
+                    if (snakeDirection == 'left') {
+                        return;
+                    } else
+                    snakeDirection = 'right';
+                }
+                // Left key
+                if (event.which == 37) {
+                    // Snake can't reverse
+                    if (snakeDirection == 'right') {
+                        return;
+                    } else
+                    snakeDirection = 'left';
+                }
+                // Down key
+                if (event.which == 40) {
+                    // Snake can't reverse
+                    if (snakeDirection == 'up') {
+                        return;
+                    } else
+                    snakeDirection = 'down';
+                }
+                // Up key
+                if (event.which == 38) {
+                    // Snake can't reverse
+                    if (snakeDirection == 'down') {
+                        return;
+                    } else
+                    snakeDirection = 'up';
+                }
+            });
+
+
+            /* Setting initial speed
+             */
+            var framesPerSecond = 30
+            setInterval(function() {
+                moveSnake();
+                drawEverything();
+            }, 1000/framesPerSecond);   
+        }
+
+
+        function drawSnakeHead() {
+            canvasContext.fillStyle = 'white';
+            canvasContext.fillRect(snakeX,snakeY,SNAKE_THICKNESS,SNAKE_THICKNESS);
+        }
+        
+
+        function clearCanvas() {
+            canvasContext.fillStyle = 'black';
+            canvasContext.fillRect(0,0,canvas.width, canvas.height);
+        }
+
+
+        function generateApple() {
+            apple.x = Math.floor(Math.random()*(canvas.width+1));
+            apple.y = Math.floor(Math.random()*(canvas.height+1));
+            checkLegalApple(apple.x, apple.y);
+            drawApple();
+        }
+
+        // this might be able to go in generateapple? Is that the only place its called?
+        function drawApple() {
+            canvasContext.fillStyle = 'green';
+            canvasContext.beginPath();
+            canvasContext.arc(apple.x, apple.y, APPLE_THICKNESS/2, 0, Math.PI*2, true);
+            canvasContext.fill();
+        }
+
+
+        function checkLegalApple (appleX, appleY) {
+            /* Checking its not squished up against the side
+             */
+            if (appleX - (APPLE_THICKNESS*2) < 0) {
+                return generateApple()
+            }
+            if (appleX + (APPLE_THICKNESS*2) > canvas.width) {
+                return generateApple();
+            }
+            if (appleY - (APPLE_THICKNESS*2) < 0) {
+                return generateApple();
+            }
+            if (appleY + (APPLE_THICKNESS*2) > canvas.height) {
+                return generateApple();
+            }
+
+            // Checking its not under snake head
+            if (snakeHeadCenterPoint.x+(SNAKE_THICKNESS/2) > apple.x-(APPLE_THICKNESS/2) && snakeHeadCenterPoint.x-(SNAKE_THICKNESS/2) < apple.x+(APPLE_THICKNESS/2)) {
+                if (snakeHeadCenterPoint.y+(SNAKE_THICKNESS/2) > apple.y-(APPLE_THICKNESS/2) && snakeHeadCenterPoint.y-(SNAKE_THICKNESS/2) < apple.y+(APPLE_THICKNESS/2)) {
+                    return generateApple();
+                }
+            }
+            console.log("legal apple found");
+
+        }
+
+
+
+
+
+
+        function checkCollision() {
+            // Checking colission with apple
+            if (snakeHeadCenterPoint.x+(SNAKE_THICKNESS/2) > apple.x-(APPLE_THICKNESS/2) && snakeHeadCenterPoint.x-(SNAKE_THICKNESS/2) < apple.x+(APPLE_THICKNESS/2)) {
+                if (snakeHeadCenterPoint.y+(SNAKE_THICKNESS/2) > apple.y-(APPLE_THICKNESS/2) && snakeHeadCenterPoint.y-(SNAKE_THICKNESS/2) < apple.y+(APPLE_THICKNESS/2)) {
+                    // COLLISSION!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                    console.log("collide");
+                    // Fire grow code
+                    growSnake();
+                }
+            }
+            // Need to check colission with snake body. If so, lose.
+        }
+
+
+
+        function growSnake() {
+            var backX;
+            var backY;
+            if (snakeBody.length == 0) {
+                // use snake head coords
+                switch (snakeDirection) {
+                    case 'right':
+                        backX = snakeX - snakeSpeed;
+                        backY = snakeY;
+                        break;
+                    case 'left':
+                        backX = snakeX + snakeSpeed;
+                        backY = snakeY;
+                        break;
+                    case 'down':
+                        backX = snakeX;
+                        backY = snakeY - snakeSpeed;
+                        break;
+                    case 'up':
+                        backX = snakeX;
+                        backY = snakeY + snakeSpeed;
+                        break;
+                }
+            } else {
+                switch (snakeDirection) {
+                    case 'right':
+                        backX = snakeBody[snakeBody.length-1].x - snakeSpeed;
+                        backY = snakeY;
+                        break;
+                    case 'left':
+                        backX = snakeBody[snakeBody.length-1].x + snakeSpeed;
+                        backY = snakeY;
+                        break;
+                    case 'down':
+                        backX = snakeX;
+                        backY = snakeBody[snakeBody.length-1].y - snakeSpeed;
+                        break;
+                    case 'up':
+                        backX = snakeX;
+                        backY = snakeBody[snakeBody.length-1].y + snakeSpeed;
+                        break;
+                }
+            }
+            // Push new tail position onto snakeBody
+            snakeBody.push({
+                x: backX,
+                y: backY
+            });
+            generateApple();
+        }
+
+
+
+
+        function moveSnake() {
+            if (snakeDirection != '') {
+                goThisWay();
+            }
+        }
+
+
+        function goThisWay() {
+            if (snakeDirection == 'right') {
+                snakeX += snakeSpeed;
+            }
+            if (snakeDirection == 'left') {
+                snakeX -= snakeSpeed;
+            }
+            if (snakeDirection == 'down') {
+                snakeY += snakeSpeed;
+            }
+            if (snakeDirection == 'up') {
+                snakeY -= snakeSpeed;
+            }
+            /* Wrap through horizontal walls
+             */
+            if (snakeX > canvas.width) {
+                snakeX -= canvas.width;
+            }
+            if (snakeX < 0) {
+                snakeX += canvas.width;
+            }
+            /* Wrap through vertical walls
+             */
+            if (snakeY > canvas.height) {
+                snakeY -= canvas.height;
+            }
+            if (snakeY < 0) {
+                snakeY += canvas.height;
+            }
+            // Set new snakeHeadCenterPoint
+            snakeHeadCenterPoint.x = snakeX + (SNAKE_THICKNESS/2);
+            snakeHeadCenterPoint.y = snakeY + (SNAKE_THICKNESS/2);
+            moveSnakeBody();
+            checkCollision();
+        }
+        
+
+        function moveSnakeBody() {
+            if (snakeBody.length > 0) {
+                for (var i = 0; i < snakeBody.length; i++) {
+                    if (snakeDirection == 'right') {
+                        snakeBody[i].x += snakeSpeed;
+                    }
+                    if (snakeDirection == 'left') {
+                        snakeBody[i].x -= snakeSpeed;
+                    }
+                    if (snakeDirection == 'down') {
+                        snakeBody[i].y += snakeSpeed;
+                    }
+                    if (snakeDirection == 'up') {
+                        snakeBody[i].y -= snakeSpeed;
+                    }
+                    /* Wrap through horizontal walls
+                    */
+                    if (snakeBody[i].x > canvas.width) {
+                        snakeBody[i].x -= canvas.width;
+                    }
+                    if (snakeBody[i].x < 0) {
+                        snakeBody[i].x += canvas.width;
+                    }
+                    /* Wrap through vertical walls
+                    */
+                    if (snakeBody[i].y > canvas.height) {
+                        snakeBody[i].y -= canvas.height;
+                    }
+                    if (snakeBody[i].y < 0) {
+                        snakeBody[i].y += canvas.height;
+                    }
+                }
+            }
+        }
+        
+
+
+
+        function drawEverything() {
+            if (snakeDirection != '') {
+                clearCanvas();
+                drawApple();
+                drawSnakeHead();
+
+                /* If snake has a body, draw the body
+                */
+                if (snakeBody.length != 0) {
+                    console.log('draw the body code fires');
+                    for (var i = 0; i < snakeBody.length; i++) {
+                        canvasContext.fillStyle = 'white';
+                        canvasContext.fillRect(snakeBody[i].x,snakeBody[i].y,SNAKE_THICKNESS,SNAKE_THICKNESS);
+                    }
+                }
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <div id="nav" role="navigation">
+        <div class="container">
+            <nav class="row">
+                <div class="two columns nav-button">
+                    <p><a href="../index.html#projects">PROJECTS</a></p>
+                </div>
+
+                <div class="eight columns">
+                    <h3 role="logo" id="logo"><a href="../index.html">REUBEN H.</a></h3>
+                </div>
+
+                <div class="two columns nav-button">
+                    <p><a href="../index.html#blogs">ALL BLOGS</a></p>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="twelve collumns">
+                <canvas id="myCanvas" width="600" height="600"></canvas>
+            </div>
+        </div>
+        <div class="row">
+            <div class="twelve collumns">
+                <p style="text-align:center">I accidentally made a really weird snake game that grows a mutant snake as you go. Use keyboard directional arrows to control him.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
