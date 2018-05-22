@@ -83,6 +83,10 @@ Main content spacing / styling
 ====================
 */
 
+.text-center {
+  text-align: center;
+}
+
 .spacer {
   height: 60px;
 }
